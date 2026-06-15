@@ -7,8 +7,6 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- onnxruntime-web -->
-  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
 </head>
 <body>
   <main class="app">
@@ -16,7 +14,7 @@
       <div class="header">
         <div>
           <h1>MNIST 手写数字识别</h1>
-          <p id="modelStatus" class="status status-loading">模型加载中</p>
+          <p id="modelStatus" class="status status-loading">首次加载模型约需 10-90 秒，手机网络可能更久，之后会使用浏览器缓存</p>
         </div>
       </div>
 
@@ -35,7 +33,7 @@
         <span id="predictionConfidence">-</span>
       </div>
 
-      <p id="result" class="message">等待模型加载</p>
+      <p id="result" class="message">正在准备模型，请稍等</p>
 
       <div class="preview">
         <p>模型输入预览</p>
@@ -46,9 +44,10 @@
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.min.js"></script>
   <script src="preprocess.js"></script>
   <script src="ui.js"></script>
-  <script src="modelLoader.js?v=20260616-1"></script>
-  <script src="app.js?v=20260616-2"></script>
+  <script src="modelLoader.js?v=20260616-2"></script>
+  <script src="app.js?v=20260616-3"></script>
 </body>
 </html>
