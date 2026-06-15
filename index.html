@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MNIST 手写数字识别</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- onnxruntime-web -->
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="workspace" aria-label="手写数字识别">
+      <div class="header">
+        <div>
+          <h1>MNIST 手写数字识别</h1>
+          <p id="modelStatus" class="status status-loading">模型加载中</p>
+        </div>
+      </div>
+
+      <canvas id="canvas" width="280" height="280" aria-label="手写区域"></canvas>
+
+      <div class="buttons">
+        <button id="clearBtn" type="button">清空</button>
+        <button id="predictBtn" type="button" disabled>识别</button>
+      </div>
+    </section>
+
+    <section class="results" aria-label="识别结果">
+      <div class="prediction">
+        <span class="prediction-label">预测</span>
+        <strong id="predictionDigit">-</strong>
+        <span id="predictionConfidence">-</span>
+      </div>
+
+      <p id="result" class="message">等待模型加载</p>
+
+      <div class="preview">
+        <p>模型输入预览</p>
+        <canvas id="previewCanvas" width="28" height="28"></canvas>
+      </div>
+
+      <div id="confidenceBars" class="confidence-bars" aria-label="置信度"></div>
+    </section>
+  </main>
+
+  <script src="preprocess.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
