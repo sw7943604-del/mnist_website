@@ -50,7 +50,7 @@ function resetPrediction(message) {
 
 async function loadModel() {
   try {
-    setStatus("首次加载模型约需 10-30 秒，之后会使用浏览器缓存", "loading");
+    setStatus("首次加载模型约需 10-90 秒，手机网络可能更久，之后会使用浏览器缓存", "loading");
     predictBtn.disabled = true;
     session = await MnistModelLoader.createSession(ort, "./white.onnx");
     console.log("模型加载成功");

@@ -1,6 +1,6 @@
 (function attachModelLoader(root) {
   const WASM_CDN = "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/";
-  const MODEL_TIMEOUT_MS = 30000;
+  const MODEL_TIMEOUT_MS = 90000;
 
   function configureOrt(ort) {
     if (!ort.env) {
