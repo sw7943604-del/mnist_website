@@ -52,7 +52,7 @@ async function loadModel() {
   try {
     setStatus("模型加载中", "loading");
     predictBtn.disabled = true;
-    session = await ort.InferenceSession.create("./white.onnx");
+    session = await MnistModelLoader.createSession(ort, "./white.onnx");
     console.log("模型加载成功");
     setStatus("模型已加载", "ready");
     predictBtn.disabled = false;
@@ -61,7 +61,7 @@ async function loadModel() {
     console.error("模型加载失败", error);
     setStatus("模型加载失败", "error");
     predictBtn.disabled = true;
-    resetPrediction("请确认 white.onnx 和 index.html 在同一文件夹");
+    resetPrediction(error.message || "请确认 white.onnx 和 index.html 在同一文件夹");
   }
 }
 

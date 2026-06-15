@@ -9,8 +9,8 @@
 - `app.js`：画布交互、模型加载、推理流程
 - `preprocess.js`：MNIST 风格图像预处理
 - `ui.js`：置信度计算和结果渲染
+- `modelLoader.js`：ONNX Runtime Web 配置和模型加载超时处理
 - `white.onnx`：ONNX 模型文件
-- `preprocess.test.js`、`ui.test.js`：本地测试文件
 
 ## 本地运行
 
@@ -26,7 +26,7 @@
 ## 部署到 GitHub Pages
 
 1. 新建一个 GitHub 仓库。
-2. 上传 `index.html`、`style.css`、`app.js`、`preprocess.js`、`ui.js`、`white.onnx`。
+2. 上传 `index.html`、`style.css`、`app.js`、`preprocess.js`、`ui.js`、`modelLoader.js`、`white.onnx`。
 3. 进入仓库 `Settings` -> `Pages`。
 4. `Source` 选择 `Deploy from a branch`。
 5. `Branch` 选择 `main`，目录选择 `/root`。
@@ -41,6 +41,7 @@ node preprocess.test.js
 node ui.test.js
 node --check preprocess.js
 node --check ui.js
+node --check modelLoader.js
 node --check app.js
 ```
 
